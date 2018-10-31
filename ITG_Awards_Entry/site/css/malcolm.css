@@ -1,0 +1,285 @@
+/* STANDARD CSS STYLES, FOR ALL */
+
+body {
+	margin: 0;
+	max-width: 100%;
+	/*min-height: 100vh;*/
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #000;
+}
+
+.grid {
+	display: grid;
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: 15vh 85vh 110vh 150vh 80vh 20vh;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.base {
+	grid-column: span 1;
+	grid-row: span 1;
+	overflow: hidden;
+}
+
+.footer {
+	background-color: powderblue;
+}
+
+/* HEADER div style css */
+
+@keyframes header_logo_acdc {
+	0% {background-color: #fff;}
+	50% {background-color: #ff0000;}
+	/*100% {background-color: #fff;}*/
+}
+
+.header {
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: 1fr;
+	max-height: 15vh;
+	height: 15vh;
+	border-bottom: 3px solid #f1f1f1;
+}
+
+.ac_dc_logo {
+	grid-column: span 2;
+	/*animation: 5s header_logo_acdc 1;*/
+	height: inherit;
+	align-content: center;
+	justify-content: center;
+}
+
+.header_headline_M_Y_T_P_h1 {
+	grid-column: span 6;
+	align-content: center;
+	justify-content: center;
+	font-size: 32px;
+	height: inherit;
+	text-transform: uppercase;
+}
+
+/* MALCOLM ABOUT div style css */
+
+.malcolm_about {
+	grid-template-columns: repeat(20, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+}
+
+.malcolm_about_content {
+	grid-column: span 20;
+	grid-row: 2 / 20;
+	/*background-color: fuchsia;*/
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+}
+
+.malcolm_about_content_images {
+	grid-column: span 2;
+	grid-row: span 10;
+	/*background-color: darkkhaki;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 1fr);
+	align-content: center;
+}
+
+.malcolm_about_old_image {
+	grid-column: span 1;
+	grid-row: span 1;
+	/*background-color: darkorange;*/
+	align-content: center;
+	justify-content: center;
+}
+
+.malcolm_about_young_image {
+	grid-column: span 1;
+	grid-row: span 1;
+	/*background-color: darkred;*/
+	align-content: center;
+	justify-content: center;
+}
+
+/* QUOTES AND GUITAR INFO div style css */
+
+@keyframes quotes {
+	0% {background-color: lightgrey; opacity: 0.3;}
+	50% {background-color: dimgrey; opacity: 0.3;}
+	100% {background-color: lightgrey; opacity: 0.3;}
+}
+
+.quotes_and_guitar_info {
+	background-image: url(../img/black-painted-brick-wall-texture_big_1920_1080.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	/*align-content: center;*/
+	font-family: 'Gloria Hallelujah', cursive;
+	color: #fff;
+}
+
+.qagi_content {
+	grid-column: 2 / 10;
+	grid-row: 2 / 10;
+	/*background-color: black;*/
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+}
+
+.guitar_info_content {
+	grid-column: 1 / 5;
+	grid-row: 2 / 9;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+}
+
+.guitar_img {
+	grid-column: span 1;
+	/*background-color: darkviolet;*/
+	align-content: center;
+	justify-content: center;
+}
+
+.guitar_info {
+	grid-column: span 1;
+	/*background-color: aqua;*/
+	text-align: center;
+}
+
+.quotes_content {
+	grid-column: 6 / 10;
+	grid-row: 2 / 9;
+	/*background-color: dimgrey;*/
+	/*animation: 5s quotes infinite;*/
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(8, 1fr);
+}
+
+.quotes_content h2{
+	text-align: center;
+}
+
+.MH90I_quote {
+	grid-column: span 1;
+	grid-row: 2 / 5;
+	/*background-color: aqua;*/
+}
+
+.GWC_quote {
+	grid-column: span 1;
+	grid-row: 5 / 8;
+	/*background-color: darksalmon;*/
+}
+
+.quote_italic_bold {
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* TIMELINE div style css */
+
+.timeline {
+	background-image: url(../img/timeline_clear_transparent_200_1400.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: 1fr;
+	color: #414042;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.timeline_content {
+	grid-column: 3 / 9;
+	grid-row: span 1;
+	/*background-color: aquamarine;*/
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(40, 1fr);
+}
+
+.timeline_right_side {
+	grid-column: 2 / 3;
+}
+
+.timeline_left_side {
+	grid-column: 1 / 2;
+}
+
+.timeline_right_side,
+.timeline_left_side {
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: 1fr;
+}
+
+.timeline_content div {
+	background-color: cyan;
+}
+
+.timeline_birth {
+	grid-row: 6 / 9;
+}
+
+.timeline_birth_content {
+	grid-column: 3 / 7;
+	grid-row: span 1;
+	/*background-color: aquamarine;*/
+}
+
+.timeline_2 {
+	grid-row: 9 / 13;
+}
+
+.timeline_3 {
+	grid-row: 13 / 15;
+}
+
+.timeline_4 {
+	grid-row: 15 / 19;
+}
+
+.timeline_5 {
+	grid-row: 19 / 22;
+}
+
+.timeline_6 {
+	grid-row: 22 / 25;
+}
+
+.timeline_ill_health {
+	grid-row: 25 / 28;
+}
+
+.timeline_ill_health_content {
+	grid-column: span 10;
+	grid-row: span 1;
+}
+
+.timeline_death {
+	grid-row: 28 / 31;
+}
+
+.timeline_death_content {
+	grid-column: 3 / 11;
+	grid-row: span 1;
+}
+
+/* IMAGE SLIDE SHOW div style css */
+
+.image_slide_show {
+    background-color: #000;
+}
+
+
+
+
+@media only screen and (max-width:1540px) {
+    .timeline {
+        background-image: url(../img/timeline_clear_transparent_200_1100.png);
+    }
+}

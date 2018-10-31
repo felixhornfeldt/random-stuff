@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+@keyframes keyframe {
+    0% {background: fuchsia;}
+    25% {background: #000;}
+    50% {background: gold;}
+    75% {background: hotpink;}
+    100% {background: crimson;}
+}
+
+@keyframes keyframe-hover {
+    1% {background: fuchsia;}
+    24% {background: gold;}
+    74% {background: crimson;}
+    99% {background: #000;}
+}
+
+.keyframe-100 {
+    width: 100px;
+    height: 100px;
+    animation: keyframe 1s infinite;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.keyframe-100:hover {
+    animation: keyframe-hover 1s infinite;
+}
+
+.keyframe-200 {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    margin-left: 20px;
+    animation: keyframe 2s infinite;
+}
+
+.keyframe-200:hover {
+    animation: keyframe-hover 2s infinite;
+}
+
+.keyframe-400 {
+    width: 400px;
+    height: 400px;
+    margin-left: 20px;
+    cursor: pointer;
+    animation: keyframe 4s infinite;
+}
+
+.keyframe-400:hover {
+    animation: keyframe-hover 4s infinite;
+}
+
+.yoda {
+    color: #fff;
+}

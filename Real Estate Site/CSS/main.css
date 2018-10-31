@@ -1,0 +1,79 @@
+/* Generall CSS */
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header CSS */
+
+#main_header_div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.fixed_img_main .fixed_img_left_bottom img {
+    width: 250px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+}
+
+header {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.header_main_content {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    overflow: hidden;
+    justify-content: center;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #999999;
+    max-height: 648px;
+}
+
+.header_first_content .header_first_image_text img {
+    width: auto;
+    height: 648px;
+}
+
+.header_first_content {
+    width: 60%;
+    height: auto;
+}
+
+.header_second_content {
+    width: auto;
+    height: auto;
+    padding: 2%;
+    text-align: center;
+}
+
+.header_second_content .header_second_image img {
+    width: 35%;
+    height: auto;
+}
+
+
+/* Main CSS */
+
+
+#main_main_div {
+    padding: 25px;
+}
+
+
+/* Footer CSS */

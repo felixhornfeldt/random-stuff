@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!--Fonts-->
+            <link href="https://fonts.googleapis.com/css?family=Bungee|Bowlby+One+SC|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Space+Mono:400,400i,700,700i" rel="stylesheet" />
+                    
+            <!--CSS Stylesheets-->
+            <link rel="stylesheet" href="./css/template.css" />
+            
+            <!--scale and charset-->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- <meta http-equiv="refresh" content="5"> -->
+            
+            <!--Title of page-->
+            <title>Profile Template</title>
+            
+            <!--Icon Head-->
+            <link rel="icon" href="./img/image_32_x_32.png" sizes="32x32" />
+            
+            <!-- Icon library FB TW IG etc. -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+            
+            <!-- JS Code -->
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="./js/template.js"></script>
+        </head>
+        <body onload="toogleAbout()">
+            <header>
+                <div class="standardheadercontainer" id="standardheadercontainer">
+                    <div class="navdropdown" id="navdropdown">
+                        <a onclick="dropdown()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                    <div class="headernavbox" id="headernavbox">
+                        <ul role="navigation" class="navlist">
+                            <li class="navlistitem" id="navhome">
+                                <a href="./index.html">Home</a>
+                            </li>
+                            <li class="navlistitem" id="navabout">
+                                <a href="./siteabout.html">About</a>
+                            </li>
+                            <li class="navlistitem" id="navblog">
+                                <a href="./siteblog.html">Blog</a>
+                            </li>
+                            <li class="navlistitem" id="navcontact">
+                                <a href="./sitecontact.html">Contact</a>
+                            </li>
+                            <li class="navlistitem" id="navportfolio">
+                                <a href="./siteportfolio.html">Portfolio</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="aboutmaincontainer" id="aboutmaincontainer">
+                    <div class="aboutmainbox">
+                        <div class="aboutimagecontainer">
+                            <div class="aboutimagebox"></div>
+                        </div>
+                        <div class="aboutinfocontainer">
+                            <div class="aboutinfonamehead">
+                                <h1 class="aboutinfoname">Felix Hörnfeldt</h1>
+                            </div>
+                            <div class="aboutinfoinfobox">
+                                <div class="aboutinfoinfocontent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </body>
+    </html>

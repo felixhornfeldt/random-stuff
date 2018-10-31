@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+            <!-- <META HTTP-EQUIV="refresh" CONTENT="2.5"> -->
+            <style>
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: crimson;
+                    background: #f1f1f1;
+                    font-weight: 300;
+                }
+
+                .strikeout{
+                    text-decoration: line-through;
+                }
+
+                .priority {
+                    color: blueviolet;
+                }
+            </style>
+        </head>
+        <body>
+            <div id="shop">
+                <!-- <h1>{{ header }}</h1>
+                <input type="text" v-model="header">
+                <h1>{{ header.toLocaleUpperCase() }}</h1>
+                <h3>{{ yo ? yo : 'nahh bich' }}</h3> -->
+                <div class="header">
+                    <h1>{{ header.toLocaleUpperCase() }}</h1>
+                    <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Add item</button>
+                    <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel</button>
+                </div>
+                <div class="additemform" v-if="state === 'edit'">
+                    <input type="text" v-model="newItem" placeholder="Add item" @keyup.enter="saveItem"> 
+                    <!-- <p>{{ characterCount }}</p> -->
+                    <button class="btn btn-primary" :disabled="newItem.length === 0" v-on:click="items.push(newItem)">Save</button>
+                </div>
+                <!-- <a v-bind:href="newItem" target="_blank">Linking</a> -->
+                <ul>
+                    <!-- <li v-for="item in items" :class="{strikeout: item.purchased, priority: item.priority}" @click="tooglePurchase(item)">{{ item.label }}</li> -->
+                    <li v-for="item in reversedItems" :
+                    class="{strikeout: item.purchased, priority: item.priority}" @click="tooglePurchase(item)">{{ item.label }}</li>
+                    <!-- <li :class="[item.purchased ? 'strikeout': '', item.priority ? 'priority' : '']"></li> -->
+                </ul>
+                <p v-if="items.length === 0">Mate getting it on</p>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script>
+                var shopDiv = new Vue ({
+                    el: '#shop',
+                    data: {
+                        state: 'default',
+                        // header: 'like got damn',
+                        // yo: null
+                        header: 'Shopping list app',
+                        newItem : '',
+                        items: [
+                            {
+                                label: 'Girls',
+                                purchased: false,
+                                priority: true
+                            },
+                            {
+                                label: 'Drugs',
+                                purchased: false,
+                                priority: true
+                            },
+                            {
+                                label: 'Alcohol',
+                                purchased: true,
+                                priority: false
+                            },
+                        ]
+                    },
+                    computed: {
+                        // characterCount() {
+                        //     return this.newItem.length;
+                        // }
+                        reversedItems() {
+                            return this.items.slice(0).reverse();
+                        }
+                    },
+                    methods: {
+                        saveItem: function() {
+                            this.items.push({
+                                label: this.newItem,
+                                purchased: false,
+                            });
+                            this.newItem = '';
+                        },
+                        changeState: function(newState) {
+                            this.state = newState;
+                            this.newItem = '';
+                        },
+                        tooglePurchase: function(item) {
+                            item.purchased = !item.purchased;
+                        }
+                    }
+                });
+            </script>
+        </body>
+    </html>

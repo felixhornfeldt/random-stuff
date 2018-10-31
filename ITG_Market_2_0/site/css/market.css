@@ -1,0 +1,54 @@
+/* Standard CSS, css properties including more than 5 elements go here */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    max-width: 100%;
+}
+
+a {
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+}
+
+.hide {
+    display: none;
+}
+
+.blue {
+    color: #009cdd;
+}
+
+.pink {
+    color: #eb0088;
+}
+
+.orange {
+    color: #f6932c;
+}
+
+/* Linear gradient background */
+
+.background-body {
+    background: linear-gradient(#1E90FF, #FF1493, #FF8C00);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.body-div-center {
+    background-color: #fff;
+    /*border: 1px solid #000;*/
+    width: 60vw;
+    height: 150vh;
+    z-index: 99;
+}

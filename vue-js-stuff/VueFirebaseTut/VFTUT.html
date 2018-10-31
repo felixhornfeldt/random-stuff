@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+            <style>
+                .cardbox {
+                    margin: 5px;
+                    padding: 5px;
+                    border: 2px dotted black;
+                    border-radius: 15px;
+                    width: 75%;
+                }
+
+                h3,h5 {
+                    margin: 0;
+                }
+
+                h3 {
+                    color: black;
+                    font-weight: 700;
+                }
+
+                h5 {
+                    color: #ff0000;
+                    font-weight: 300;
+                }
+
+                .form-group {
+                    margin: 15px;
+                    border: 3px solid #000000;
+                    padding: 5px;
+                }
+
+                .head {
+                    font-family: Raleway;
+                }
+            </style>
+        </head>
+        <body>
+            <h1 class="head">WebRPi</h1>
+            <div id="chat" class="chatctr">
+                <div v-for="message in messages" class="cardbox">
+                    <h3>{{ message.nickname }}</h3>
+                    <h5>{{ message.text }}</h5>
+                    <a @click.prevent="deleteMessage(message)" href="#" style="color: blue">delete</a>
+                </div>
+
+                <hr>
+
+                <div class="newcardmsg">
+                    <form @submit.prevent="storemsg">
+                        <div class="form-group">
+                            <label>Msg:</label>
+                            <textarea v-model="msgText" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>nickname:</label>
+                            <input v-model="nickname">
+                        </div>
+                        <button type="submit" style="margin-left:15px;">Send</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </body>
+        <script type="text/javascript">
+            const config = {
+                apiKey: "AIzaSyB7SUuVQZjm1E5p5MrfZIBbFiASe0R2nBQ",
+                authDomain: "vue-tutorial-test.firebaseapp.com",
+                databaseURL: "https://vue-tutorial-test.firebaseio.com",
+                projectId: "vue-tutorial-test",
+                storageBucket: "vue-tutorial-test.appspot.com",
+                messagingSenderId: "525913239717"
+            };
+            firebase.initializeApp(config);
+
+            const database = firebase.database();
+            const messageRef = database.ref('messages');
+
+            // database.ref('who/am/I').set('1st felix');
+            // database.ref('who').child('am').child('i').set('2nd felix');
+            // database.ref('who').child('am/ii').set('3rd felix');
+
+            // Example
+            // database.ref('articles').child(articleId)
+            //
+
+            new Vue ({
+                el: '#chat',
+                data: {
+                    messages: [],
+                    msgText: '',
+                    nickname: 'hotbox'
+                },
+                methods: {
+                    storemsg() {
+                        // this.messages.push({text: this.msgText, nickname: this.nickname});
+                        // database.ref('messages').push({text: this.msgText, nickname: this.nickname});
+                        messageRef.push({text: this.msgText, nickname: this.nickname});
+                        this.msgText = '';
+                    },
+
+                    deleteMessage(message) {
+                        messageRef.child(message.id).remove()
+                    }
+                },
+
+                created() {
+                    // value = snapshot.val() | key = snapshot.key
+
+                    // database.ref('messages').on('child_added', snapshot => this.messages.push(snapshot.val()));
+                    // messageRef.on('child_added', snapshot => this.messages.push(snapshot.val()));
+                    messageRef.on('child_added', snapshot => this.messages.push({...snapshot.val(), id: snapshot.key}));
+                    messageRef.on('child_removed', snapshot => {
+                        const deletedMessage = this.messages.find(message => message.id === snapshot.key);
+                        const index = this.messages.indexOf(deletedMessage);
+                        this.messages.splice(index, 1);
+                    });
+                }
+            });
+        </script>
+    </html>

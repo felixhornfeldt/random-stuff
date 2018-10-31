@@ -1,0 +1,126 @@
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.grid {
+	display: grid;
+}
+
+.body-content {
+	grid-template-columns: 1fr;
+	grid-template-rows: 10vh 5vh auto;
+}
+
+.base {
+	grid-column: span 1;
+	grid-row: span 1;
+	/*background-color: #e8edf3;*/
+}
+
+/* HEADER STYLE CSS */
+
+.header {
+	background-color: #e8edf3;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.header-content {
+	grid-row: span 1;
+	grid-column: 2 / 4;
+	align-content: center;
+	justify-content: center;
+}
+
+.header-headline {
+	color: #e6cf8b;
+	font-size: 72px;
+	margin: 0;
+	font-weight: 800;
+}
+
+/* NAV BAR STYLE CSS */
+
+.active {
+	/*background-color: fuchsia;*/
+	background-color: #b56969;
+}
+
+.nav {
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(4, 1fr);
+	background-color: #22264b;
+}
+
+.nav-content {
+	grid-template-rows: inherit;
+	grid-template-columns: repeat(7, 1fr);
+	grid-column: 2 / 4;
+	grid-row: span 1;
+}
+
+.nav-items {
+	grid-column: 3 / 6;
+	grid-row: 1fr;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: inherit;
+}
+
+.nav-bar-item {
+	grid-row: span 1;
+	color: #e6cf8b;
+	text-decoration: none;
+	align-content: center;
+	justify-content: center;
+}
+
+.nav-bar-item:hover {
+	background-color: #fff;
+	color: #22264b;
+}
+
+/* MAIN STYLE CSS */
+
+.main {
+	min-height: 85vh;
+	background-color: chartreuse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

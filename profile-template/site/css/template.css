@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Roboto', Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    width: 100%;
+    /* min-height: 100vh; */
+    /* background-color: #000; */
+    overflow: auto;
+}
+
+/* STANDARD INDEX HTML CSS PROPERTIES 1920 px width */
+
+.indexsitepagecontainer {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Bungee', 'Open Sans', 'Roboto', sans-serif;
+    background-image: url("./../img/wallpaper.wiki-Picture-of-CPU-PIC-WPB003640-1.jpg");
+    /* background-image: url("./../img/image_1920_x_974.jpg"); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.indexheadlinebox {
+    display: none;
+}
+
+.indexheadline {
+    margin: 0;
+    font-size: 72px;
+    text-align: center;
+}
+
+.indexnavbar {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.indexnavlist {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #fff;
+    background-color: rgb(0, 0, 0, 0.555);
+}
+
+.indexnavlistitem {
+    float: left;
+    padding: 5px 25px;
+    /* border: 1px solid #fff; */
+    margin: 0;
+    cursor: pointer;
+}
+
+#indexnavabout,
+#indexnavblog,
+#indexnavcontact {
+    border-right: 2px solid #fff;
+}
+
+.indexnavlistitem:hover,
+.indexnavlistitem:hover a {
+    /* background-color: #00e6f9; */
+    background-color: deeppink;
+    /* color: #000; */
+    color: #fff;
+}
+
+.indexnavlistitem a {
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* STANDARD HEADER CSS PROPERTIES */
+
+header {
+    height: 57px;
+    margin: 0;
+    /* margin-bottom: 57px; */
+    background-color: #fff;
+    font-family: 'Bungee', 'Open Sans', 'Roboto', sans-serif;
+    color: #000;
+    width: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.255);
+}
+
+.standardheadercontainer {
+    height: inherit;
+    width: inherit;
+}
+
+.navdropdown {
+    display: none;
+}
+
+.headernavbox {
+    display: grid;
+    width: inherit;
+    justify-content: center;
+    align-content: center;
+    height: inherit;
+}
+
+.navlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navlistitem {
+    float: left;
+    padding: 0px 15px;
+}
+
+.navlistitem a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* MAIN CONTAINER CSS PROPERTIES */
+
+main {
+    margin: 0;
+    width: 100%;
+}
+
+/* ABOUT MAIN CONTAINER CSS PROPERTIES */
+
+.aboutmaincontainer {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.aboutmainbox {
+    padding-top: 57px;
+    width: inherit;
+    height: auto;
+    display: none;
+}
+
+.aboutimagecontainer {
+    height: 450px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.aboutimagebox {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    /* background-image: url("./../img/image_400_x_400_profile_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.aboutinfocontainer {
+    margin: 0;
+    height: auto;
+}
+
+.aboutinfonamehead {
+    display: grid;
+    justify-content: center;
+}
+
+.aboutinfoname {
+    margin: 0;
+    font-family: 'Bungee', 'Open Sans', 'Roboto', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.aboutinfoinfobox {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.aboutinfoinfocontent {
+    width: 65vw;
+    height: 100px;
+    background-color: chartreuse;
+}
+
+/* PORTFOLIO MAIN CONTAINER CSS PROPERTIES */
+
+.portfoliomaincontainer {
+    height: auto;
+    width: inherit;
+}
+
+/* MEDIA QUERIES CSS PROPERTIES */
+
+@media screen and (max-width:1550px) {
+    .indexsitepagecontainer {
+        /* background-image: url("./../img/image_1536_x_759.jpg"); */
+    }
+
+    .aboutimagecontainer {
+        height: 400px;
+    }
+
+    .aboutimagebox {
+        width: 350px;
+        height: 350px;
+    }
+
+    .aboutinfoname {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .indexsitepagecontainer {
+        /* background-image: url("./../img/image_400_x_667.jpg"); */
+    }
+
+    .indexheadlinebox {
+        margin-bottom: 25px;
+    }
+
+    .indexheadline {
+        font-size: 42px;
+        line-height: 1.5em;
+    }
+
+    .indexnavlist {
+        width: 250px;
+    }
+
+    .indexnavlistitem {
+        float: none;
+        text-align: center;
+    }
+
+    #indexnavabout,
+    #indexnavblog,
+    #indexnavcontact {
+        border-right: 0;
+        border-bottom: 2px solid #fff;
+    }
+
+    .headernavbox {
+        display: none;
+        height: auto;
+        background-color: #fff;
+        width: 100%;
+        border-top: 1px solid rgba(0, 0, 0, 0.255);
+        border-bottom: 1.5px solid rgba(0, 0, 0, 0.255);
+
+    }
+
+    .navlist {
+        text-align: center;
+    }
+
+    .navlistitem {
+        float: none;
+    }
+
+    .navdropdown {
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: inherit;
+    }
+
+    i.fa-bars {
+        font-size: 32px;
+        border: 2px solid #000;
+        margin: 0;
+        padding: 5px 7px;
+    }
+
+    .aboutimagecontainer {
+        height: 350px;
+    }
+
+    .aboutimagebox {
+        width: 300px;
+        height: 300px;
+    }
+
+    .aboutinfoname {
+        font-size: 32px;
+    }
+
+    .aboutinfoinfocontent {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .indexheadlinebox {
+        margin-bottom: 15px;
+    }
+    
+    .indexheadline {
+        font-size: 36px;
+    }
+    
+    .aboutimagecontainer {
+        height: 300px;
+    }
+    
+    .aboutimagebox {
+        width: 250px;
+        height: 250px;
+    }
+
+    .aboutinfoname {
+        font-size: 28px;
+    }
+}
